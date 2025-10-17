@@ -1,10 +1,9 @@
-import { useState } from "react";
-import "./App.css";
 import Editor from "./components/Editor";
 import Preview from "./components/Preview";
+import useLocalStorage from "./hooks/useLocalStorage";
 
 function App() {
-  const [markdown, setMarkdown] = useState("# HelloWorld");
+  const [markdown, setMarkdown] = useLocalStorage("markdown", "");
   return (
     <>
       <div className="flex h-screen p-4 gap-4">
