@@ -1,17 +1,16 @@
 import { useState } from "react";
 import "./App.css";
-import Ed
+import Editor from "./components/Editor";
 
 function App() {
+  const [markdown, setMarkdown] = useState("# HelloWorld");
   return (
     <>
       <div className="flex h-screen">
         <div className="w-1/2">
-          <Editor />
+          <Editor value={markdown} onChange={setMarkdown} />
         </div>
-        <div className="w-1/2">
-          <preview />
-        </div>
+        <div className="w-1/2"></div>
       </div>
     </>
   );
