@@ -1,73 +1,67 @@
-# React + TypeScript + Vite
+React + TypeScript Markdown Editor
+==================================
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive markdown editor built with React and TypeScript. Features live preview, dark/light theme, and easy local setup.
 
-Currently, two official plugins are available:
+Setup Instructions
+------------------
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  bashgit clone https://github.com/your-username/markdown-editor-ts.gitcd markdown-editor-ts
+    
+2.  bashnpm install# oryarn install
+    
+3.  bashnpm start# oryarn startYour app will be available at http://localhost:3000/
+    
 
-## React Compiler
+Project Structure
+-----------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   src/App.tsx – Main layout, split editor/preview, theme toggle
+    
+*   src/components/Editor.tsx – Markdown text editor
+    
+*   src/components/Preview.tsx – Live markdown preview using [react-markdown](https://github.com/remarkjs/react-markdown)
+    
+*   src/components/ThemeToggle.tsx – Light/Dark Mode button
+    
+*   src/index.css – Clean, responsive, theme-aware styles
+    
 
-## Expanding the ESLint configuration
+Features
+--------
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+*   **Live Markdown Editing:** See preview as you type.
+    
+*   **Responsive Layout:** Editor and preview each take half the screen, stacking on mobile.
+    
+*   **Dark/Light Theme:** Toggle instantly with the theme button.
+    
+*   **Persistent State:** Last-edited markdown and theme saved in browser.
+    
+*   **Simple File Structure:** Easy to understand and extend.
+    
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Future Enhancements
+-------------------
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+*   **Scroll Sync:** Synchronize scroll position between editor and preview panes.
+    
+*   **Export & Import:** Save/edit markdown files locally.
+    
+*   **Syntax Highlighting:** For code blocks in preview.
+    
+*   **Custom Themes:** User-selectable color schemes.
+    
+*   **Toolbar:** Formatting buttons for quick markdown inserts.
+    
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+How to Contribute
+-----------------
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  Fork the repo and create your branch (git checkout -b feature/my-feature)
+    
+2.  Commit your changes (git commit -am 'Add new feature')
+    
+3.  Push to the branch (git push origin feature/my-feature)
+    
+4.  Create a Pull Request
