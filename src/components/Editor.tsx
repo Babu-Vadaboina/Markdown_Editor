@@ -7,16 +7,15 @@ const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
     onChange(event.target.value);
   };
   return (
-    <div className="flex flex-col h-full border border-gray-300 rounded-lg">
-      <div className="bg-gray-100 px-4 py-2 font-semibold border-b text-gray-700">
-        Editor
-      </div>
+    <div className="editor-container">
       <textarea
-        className="flex-1 p-3 font-mono text-sm resize-none outline-none bg-white text-gray-800"
+        id="markdown-editor"
+        className="editor-textarea"
         value={value}
         onChange={handleInputChange}
-        placeholder="Type your markdown here"
-      ></textarea>
+        placeholder="Write your markdown here..."
+        spellCheck={false}
+      />
     </div>
   );
 };
